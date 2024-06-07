@@ -9,23 +9,22 @@
 
 import Foundation
 
-struct CountryManager {
+class CountryManager {
     
-    let baseCountryURL = "https://restcountries.com/v3.1/"
-    
-    func fetchCountry(_ countryName: String) {
+    func fetchCountry(_ countryName: String, completion: @escaping ([CountryData]?) -> Void) {
+        let baseCountryURL = "https://restcountries.com/v3.1/"
         let endpoint: String
         if countryName.lowercased() == "all" {
-            endpoint = "all?fields=name"
+            endpoint = "all?fields=name,flag"
         } else {
             endpoint = "name/\(countryName)?fields=name,capital,region,latlng,flag,population,timezones"
         }
         let urlString = "\(baseCountryURL)\(endpoint)"
         print(urlString)
-        performRequest(urlString)
+        performRequest(urlString, completion: completion)
     }
     
-    func performRequest(_ urlString: String) {
+    private func performRequest(_ urlString: String, completion: @escaping ([CountryData]?) -> Void) {
         
         // Create URL
         if let url = URL(string: urlString) {
@@ -37,13 +36,16 @@ struct CountryManager {
             let task = session.dataTask(with: url) { data, response, error in
                 if let error = error {
                     print(error)
+                    completion(nil)
                     return
                 }
                 if let receivedData = data {
-                    self.parseJSON(countryData: receivedData)
+                    let decodedData = self.parseJSON(countryData: receivedData)
+                    completion(decodedData)
                     
                 } else {
                     print("No data received")
+                    completion(nil)
                 }
             }
             // Start Task
@@ -51,7 +53,7 @@ struct CountryManager {
         }
     }
     
-    func parseJSON(countryData: Data) {
+    private func parseJSON(countryData: Data) -> [CountryData]? {
         let decoder = JSONDecoder()
         
         do{
@@ -77,8 +79,10 @@ struct CountryManager {
                     print("Timezones: \(timezones.joined(separator: ", "))")
                 }
             }
+            return decodedCountryData
         } catch {
             print(error)
+            return nil
         }
         
     }

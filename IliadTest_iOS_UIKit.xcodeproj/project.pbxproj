@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C925B392C13173900F7BF12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C925B382C13173900F7BF12 /* DetailViewController.swift */; };
 		8CADDDFC2C0EFE9A0058FF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDFB2C0EFE9A0058FF15 /* AppDelegate.swift */; };
 		8CADDDFE2C0EFE9A0058FF15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDFD2C0EFE9A0058FF15 /* SceneDelegate.swift */; };
-		8CADDE002C0EFE9A0058FF15 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDFF2C0EFE9A0058FF15 /* CountriesViewController.swift */; };
+		8CADDE002C0EFE9A0058FF15 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDFF2C0EFE9A0058FF15 /* CountryViewController.swift */; };
 		8CADDE032C0EFE9A0058FF15 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8CADDE022C0EFE9A0058FF15 /* Base */; };
 		8CADDE062C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDE042C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.xcdatamodeld */; };
 		8CADDE082C0EFE9B0058FF15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CADDE072C0EFE9B0058FF15 /* Assets.xcassets */; };
@@ -39,10 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C925B382C13173900F7BF12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8CADDDF82C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IliadTest_iOS_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CADDDFB2C0EFE9A0058FF15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CADDDFD2C0EFE9A0058FF15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8CADDDFF2C0EFE9A0058FF15 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		8CADDDFF2C0EFE9A0058FF15 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		8CADDE022C0EFE9A0058FF15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CADDE052C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IliadTest_iOS_UIKit.xcdatamodel; sourceTree = "<group>"; };
 		8CADDE072C0EFE9B0058FF15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,7 +157,8 @@
 		8CF7458B2C11993F00C4ABB0 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				8CADDDFF2C0EFE9A0058FF15 /* CountriesViewController.swift */,
+				8CADDDFF2C0EFE9A0058FF15 /* CountryViewController.swift */,
+				8C925B382C13173900F7BF12 /* DetailViewController.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -292,11 +295,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CADDE062C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.xcdatamodeld in Sources */,
-				8CADDE002C0EFE9A0058FF15 /* CountriesViewController.swift in Sources */,
+				8CADDE002C0EFE9A0058FF15 /* CountryViewController.swift in Sources */,
 				8CADDDFC2C0EFE9A0058FF15 /* AppDelegate.swift in Sources */,
 				8CF7458D2C11A1CC00C4ABB0 /* CountryManager.swift in Sources */,
 				8CF745A32C11F13F00C4ABB0 /* CountryData.swift in Sources */,
 				8CADDDFE2C0EFE9A0058FF15 /* SceneDelegate.swift in Sources */,
+				8C925B392C13173900F7BF12 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

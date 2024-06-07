@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WYS-LZ-qlM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="de1-vf-ujK">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -8,19 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Countries View Controller-->
+        <!--Country View Controller-->
         <scene sceneID="JIk-tN-puC">
             <objects>
-                <viewController storyboardIdentifier="CountriesViewController" id="WYS-LZ-qlM" customClass="CountriesViewController" customModule="IliadTest_iOS_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CountriesViewController" id="WYS-LZ-qlM" customClass="CountryViewController" customModule="IliadTest_iOS_UIKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zpo-O5-UR3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gQI-RS-yRK">
-                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="txn-IY-V5h"/>
-                                </constraints>
+                            <searchBar contentMode="redraw" text="Search for country" placeholder="Search for country" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQI-RS-yRK">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -28,28 +25,76 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eGq-oN-7ck">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CountryCell" rowHeight="50" id="C1j-me-XQK">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C1j-me-XQK" id="LWD-z5-t5A">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1OG-7n-n8o" kind="show" id="wl9-LD-rwZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kbH-X4-kJK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gQI-RS-yRK" firstAttribute="trailing" secondItem="kbH-X4-kJK" secondAttribute="trailing" id="410-WD-cST"/>
-                            <constraint firstItem="eGq-oN-7ck" firstAttribute="leading" secondItem="kbH-X4-kJK" secondAttribute="leading" id="5az-Pg-ET4"/>
-                            <constraint firstItem="gQI-RS-yRK" firstAttribute="top" secondItem="kbH-X4-kJK" secondAttribute="top" id="7WN-Y0-BJh"/>
-                            <constraint firstItem="gQI-RS-yRK" firstAttribute="leading" secondItem="kbH-X4-kJK" secondAttribute="leading" id="8uc-fF-Z8n"/>
-                            <constraint firstItem="eGq-oN-7ck" firstAttribute="top" secondItem="gQI-RS-yRK" secondAttribute="top" constant="44" id="R67-Fc-2oE"/>
-                            <constraint firstItem="eGq-oN-7ck" firstAttribute="trailing" secondItem="kbH-X4-kJK" secondAttribute="trailing" id="kbt-0e-cP3"/>
-                            <constraint firstItem="eGq-oN-7ck" firstAttribute="bottom" secondItem="kbH-X4-kJK" secondAttribute="bottom" id="mye-Bp-7hZ"/>
+                            <constraint firstItem="eGq-oN-7ck" firstAttribute="leading" secondItem="kbH-X4-kJK" secondAttribute="leading" id="9yR-ad-qXL"/>
+                            <constraint firstItem="eGq-oN-7ck" firstAttribute="bottom" secondItem="kbH-X4-kJK" secondAttribute="bottom" id="Hlb-Bw-y9h"/>
+                            <constraint firstItem="eGq-oN-7ck" firstAttribute="top" secondItem="gQI-RS-yRK" secondAttribute="bottom" id="JQU-DN-YpJ"/>
+                            <constraint firstItem="gQI-RS-yRK" firstAttribute="trailing" secondItem="kbH-X4-kJK" secondAttribute="trailing" id="MuB-Pt-0c6"/>
+                            <constraint firstItem="gQI-RS-yRK" firstAttribute="top" secondItem="kbH-X4-kJK" secondAttribute="top" id="iMz-6n-KhM"/>
+                            <constraint firstItem="gQI-RS-yRK" firstAttribute="leading" secondItem="kbH-X4-kJK" secondAttribute="leading" id="n1w-9i-cJc"/>
+                            <constraint firstItem="eGq-oN-7ck" firstAttribute="trailing" secondItem="kbH-X4-kJK" secondAttribute="trailing" id="yWz-ac-fmf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7hm-nA-ybv"/>
                     <connections>
                         <outlet property="countryTableView" destination="eGq-oN-7ck" id="UpD-46-hnu"/>
                         <outlet property="searchBar" destination="gQI-RS-yRK" id="IfP-vB-d2D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWB-16-Y7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654.19847328244271" y="-71.126760563380287"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="FJw-TC-ZL5">
+            <objects>
+                <viewController id="1OG-7n-n8o" customClass="DetailViewController" customModule="IliadTest_iOS_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sra-4Y-wfK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tl5-7W-R6b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q6t-ki-iXd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0aD-mb-jE7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="-71"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9dc-Tv-QYH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="de1-vf-ujK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b9X-f8-XxU">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WYS-LZ-qlM" kind="relationship" relationship="rootViewController" id="Pxi-2R-tXZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xTM-GM-bQb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-272.51908396946561" y="-71.126760563380287"/>
         </scene>
