@@ -7,10 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CountriesViewController: UIViewController {
 
+    
+    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var countryTableView: UITableView!
+    
+    var countryManager = CountryManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        countryManager.fetchCountry("italy")
         // Do any additional setup after loading the view.
     }
 
