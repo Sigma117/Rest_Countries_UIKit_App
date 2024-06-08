@@ -44,7 +44,6 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
         }
-        
     }
     
     // MARK: - UITableViewDataSource
@@ -69,8 +68,19 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        // Handle cell selection if needed
+        
+        self.performSegue(withIdentifier: "showDetailView", sender: filteredCountries[indexPath.row])
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailView",
+           let detailVC = segue.destination as? DetailViewController,
+           let selectedCountry = sender as? CountryData {
+            detailVC.countryName = selectedCountry.name.common
+        }
+    }
+    
+
     
     // MARK: - UISearchBarDelegate
     
@@ -81,6 +91,14 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
             filteredCountries = countries.filter { $0.name.common.lowercased().contains(searchText.lowercased()) }
         }
         countryTableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBar.endEditing(true)
     }
 }
 

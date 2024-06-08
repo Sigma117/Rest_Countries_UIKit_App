@@ -17,7 +17,7 @@ class CountryManager {
         if countryName.lowercased() == "all" {
             endpoint = "all?fields=name,flag"
         } else {
-            endpoint = "name/\(countryName)?fields=name,capital,region,latlng,flag,population,timezones"
+            endpoint = "name/\(countryName)?fields=name,capital,region,latlng,flag,population,timezones,languages,unMember"
         }
         let urlString = "\(baseCountryURL)\(endpoint)"
         print(urlString)
@@ -77,6 +77,19 @@ class CountryManager {
                 }
                 if let timezones = country.timezones {
                     print("Timezones: \(timezones.joined(separator: ", "))")
+                }
+                if let languages = country.languages{
+                    for (code, language) in languages {
+                        print("Language code: \(code), Language name: \(language)")
+                    }
+                }
+                
+                if let unMember = country.unMember {
+                    if unMember {
+                        print("unMemebr: True")
+                    } else {
+                        print("unMemebr: False")
+                    }
                 }
             }
             return decodedCountryData

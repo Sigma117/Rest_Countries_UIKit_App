@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C925B392C13173900F7BF12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C925B382C13173900F7BF12 /* DetailViewController.swift */; };
+		8C925B3B2C135FFD00F7BF12 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C925B3A2C135FFD00F7BF12 /* FilterViewController.swift */; };
 		8CADDDFC2C0EFE9A0058FF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDFB2C0EFE9A0058FF15 /* AppDelegate.swift */; };
 		8CADDDFE2C0EFE9A0058FF15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDFD2C0EFE9A0058FF15 /* SceneDelegate.swift */; };
 		8CADDE002C0EFE9A0058FF15 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDFF2C0EFE9A0058FF15 /* CountryViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		8C925B382C13173900F7BF12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8C925B3A2C135FFD00F7BF12 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		8CADDDF82C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IliadTest_iOS_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CADDDFB2C0EFE9A0058FF15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CADDDFD2C0EFE9A0058FF15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				8CADDDFF2C0EFE9A0058FF15 /* CountryViewController.swift */,
 				8C925B382C13173900F7BF12 /* DetailViewController.swift */,
+				8C925B3A2C135FFD00F7BF12 /* FilterViewController.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				8CADDE002C0EFE9A0058FF15 /* CountryViewController.swift in Sources */,
 				8CADDDFC2C0EFE9A0058FF15 /* AppDelegate.swift in Sources */,
 				8CF7458D2C11A1CC00C4ABB0 /* CountryManager.swift in Sources */,
+				8C925B3B2C135FFD00F7BF12 /* FilterViewController.swift in Sources */,
 				8CF745A32C11F13F00C4ABB0 /* CountryData.swift in Sources */,
 				8CADDDFE2C0EFE9A0058FF15 /* SceneDelegate.swift in Sources */,
 				8C925B392C13173900F7BF12 /* DetailViewController.swift in Sources */,

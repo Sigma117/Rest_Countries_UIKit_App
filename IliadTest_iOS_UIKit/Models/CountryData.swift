@@ -5,7 +5,7 @@
 //  Created by Stefano Zhao on 06/06/24.
 //
 
-// https://restcountries.com/v3.1/name/Italy?fields=name,capital,region,latlng,flag,population,timezones
+// https://restcountries.com/v3.1/name/Italy?fields=name,capital,region,latlng,flag,population,timezones,languages,unMember
 import Foundation
 
 struct CountryData: Decodable {
@@ -16,6 +16,9 @@ struct CountryData: Decodable {
     let flag: String?
     let population: Int?
     let timezones: [String]?
+    let languages: [String: String]?
+    let unMember: Bool?
+    
 }
 
 struct Name: Decodable {
