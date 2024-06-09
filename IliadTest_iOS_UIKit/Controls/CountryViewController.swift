@@ -127,6 +127,8 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 applyFilters()
             } else {
                 print("no filter selected")
+                filteredCountries = countries
+                countryTableView.reloadData()
             }
         }
     }

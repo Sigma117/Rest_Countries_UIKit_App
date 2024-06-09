@@ -45,13 +45,14 @@ class DetailViewController: UIViewController {
     //MARK: Update user interface
     
     func updateUI(with country: CountryData) {
-        countryNameTitle.text = "\(country.flag ?? "⚑") \(country.name.common)"
-        officialNameLabel.text = "Country official name: \(country.name.official)"
-        capitalLabel.text = "Capital: \(country.capital?.first ?? "N/A")"
-        regionLabel.text = "Belong region: \(country.region ?? "N/A")"
-        populationLabel.text = "Country current poppulation: \(country.population ?? 0)"
-        timezoneLabel.text = "Country timezone: \(country.timezones?.joined() ?? "N/A")"
-        languageLabel.text = "Language: \(country.languages?.values.first ?? "N/A")"
+        countryNameTitle.text   = "\(country.flag ?? "⚑") \(country.name.common)"
+        officialNameLabel.text  = "Country official name: \(country.name.official)"
+        capitalLabel.text       = "Capital: \(country.capital?.first ?? "N/A")"
+        regionLabel.text        = "Belong region: \(country.region ?? "N/A")"
+        populationLabel.text    = "Country current poppulation: \(country.population ?? 0)"
+        timezoneLabel.text      = "Country timezone: \(country.timezones?.joined() ?? "N/A")"
+        languageLabel.text      = "Language: \(country.languages?.values.first ?? "N/A")"
+        
         if let unMember = country.unMember {
             if unMember {
                 unMemberLabel.text = "UN Member: Yes"

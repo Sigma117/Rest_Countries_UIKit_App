@@ -22,7 +22,9 @@
                             </imageView>
                             <searchBar contentMode="redraw" placeholder="Search for country" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQI-RS-yRK">
                                 <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="0.50481167218543044" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
                                 <connections>
                                     <outlet property="delegate" destination="WYS-LZ-qlM" id="NbT-VM-Krk"/>
@@ -106,13 +108,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="355.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mn-On-ofl">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="36.666666666666664"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-Pl-KUs">
-                                                <rect key="frame" x="0.0" y="40.666666666666657" width="393" height="315"/>
+                                                <rect key="frame" x="0.0" y="54" width="393" height="301.66666666666669"/>
                                             </pickerView>
                                         </subviews>
                                         <constraints>
@@ -126,36 +128,39 @@
                                                 <rect key="frame" x="13.666666666666657" y="8" width="365.66666666666674" height="122"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrp-hW-JR7">
-                                                        <rect key="frame" x="133" y="0.0" width="99.666666666666686" height="31.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <rect key="frame" x="111.99999999999999" y="0.0" width="141.66666666666663" height="122"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8i-xu-ISa" userLabel="continentButton">
-                                                        <rect key="frame" x="114.66666666666667" y="45.333333333333314" width="136.33333333333331" height="31.333333333333329"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="ContinentFilter"/>
-                                                        <connections>
-                                                            <action selector="continentButtonTapped:" destination="pev-LG-ETl" eventType="touchUpInside" id="7km-Ak-QO0"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83O-N0-DZy" userLabel="filterButton">
-                                                        <rect key="frame" x="152" y="90.666666666666686" width="62" height="31.333333333333329"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Filter"/>
-                                                        <connections>
-                                                            <action selector="applyFilter:" destination="pev-LG-ETl" eventType="touchUpInside" id="JtR-FX-sMN"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83O-N0-DZy" userLabel="filterButton">
+                                                <rect key="frame" x="165.66666666666666" y="299.99999999999994" width="62" height="31.333333333333314"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="31.333333333333329" id="VgQ-kQ-t3L"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Filter"/>
+                                                <connections>
+                                                    <action selector="applyFilter:" destination="pev-LG-ETl" eventType="touchUpInside" id="JtR-FX-sMN"/>
+                                                </connections>
+                                            </button>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDf-vG-1BI" userLabel="Continent Picker View">
+                                                <rect key="frame" x="37" y="70" width="320" height="216"/>
+                                            </pickerView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="yDf-vG-1BI" firstAttribute="centerY" secondItem="MeH-EJ-GzM" secondAttribute="centerY" id="IeJ-nn-emC"/>
                                             <constraint firstItem="fgu-ny-t8i" firstAttribute="top" secondItem="MeH-EJ-GzM" secondAttribute="topMargin" id="PY4-un-QKB"/>
                                             <constraint firstAttribute="bottom" secondItem="fgu-ny-t8i" secondAttribute="bottom" constant="225.33333333333326" id="T2N-Qo-bod"/>
+                                            <constraint firstItem="yDf-vG-1BI" firstAttribute="centerX" secondItem="MeH-EJ-GzM" secondAttribute="centerX" id="cYu-Ga-HTg"/>
                                             <constraint firstItem="fgu-ny-t8i" firstAttribute="centerX" secondItem="MeH-EJ-GzM" secondAttribute="centerX" id="jx1-WI-dp1"/>
+                                            <constraint firstAttribute="bottom" secondItem="83O-N0-DZy" secondAttribute="bottom" constant="23.999999999999943" id="l20-cn-zWO"/>
                                             <constraint firstItem="fgu-ny-t8i" firstAttribute="centerX" secondItem="MeH-EJ-GzM" secondAttribute="centerX" id="rJY-CS-Ap1"/>
                                             <constraint firstItem="fgu-ny-t8i" firstAttribute="leading" secondItem="MeH-EJ-GzM" secondAttribute="leading" constant="13.666666666666657" id="x4E-4X-Rlm"/>
+                                            <constraint firstItem="83O-N0-DZy" firstAttribute="centerX" secondItem="fgu-ny-t8i" secondAttribute="centerX" id="zLo-8G-XVK"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -179,7 +184,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Roa-WA-a7V"/>
                     <connections>
-                        <outlet property="continentButton" destination="J8i-xu-ISa" id="Msu-ad-eNY"/>
+                        <outlet property="continentPickerView" destination="yDf-vG-1BI" id="bXt-Jn-eoe"/>
                         <outlet property="languagePickerView" destination="I1M-Pl-KUs" id="RPz-J6-7xd"/>
                         <segue destination="joz-iS-9Cr" kind="unwind" identifier="unwindToCountryView" unwindAction="unwindToCountryView:" id="q8g-eT-a4W"/>
                     </connections>
@@ -242,7 +247,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="languages" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGZ-SI-2Jd" userLabel="languagesLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGZ-SI-2Jd" userLabel="languagesLabel">
                                                 <rect key="frame" x="0.0" y="270.66666666666669" width="393" height="43.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -255,6 +260,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taU-SA-Dio">
                                         <rect key="frame" x="0.0" y="357.66666666666674" width="393" height="357.33333333333326"/>

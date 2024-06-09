@@ -12,33 +12,22 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     
     @IBOutlet var languagePickerView: UIPickerView!
-    @IBOutlet var continentButton: UIButton!
+    @IBOutlet var continentPickerView: UIPickerView!
     
     var selectedContinent: String?
     var selectedLanguage: String?
     
     let continents = ["No Continents","Africa", "Americas", "Asia", "Europe", "Oceania", "Polar", "Antarctic"]
-    let languages = ["No Languages", "English", "French", "Spanish", "Chinese", "Arabic", "Russian"]
+    let languages = ["No Languages", "English", "French", "Spanish", "Chinese", "Arabic", "Russian", "Hindi"]
     
     override func viewDidLoad() {
         languagePickerView.delegate = self
         languagePickerView.dataSource = self
+        continentPickerView.delegate = self
+        continentPickerView.dataSource = self
     }
     
     // MARK: - ContinentButtomPiker
-    
-    @IBAction func continentButtonTapped(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Select Continent", message: nil, preferredStyle: .actionSheet)
-        for continent in continents {
-            alert.addAction(UIAlertAction(title: continent, style: .default, handler: { _ in
-                self.selectedContinent = continent
-                self.continentButton.setTitle(continent, for: .normal)
-            }))
-        }
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
     
     @IBAction func applyFilter(_ sender: UIButton) {
         performSegue(withIdentifier: "unwindToCountryView", sender: self)
@@ -51,14 +40,28 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return languages.count
+        if pickerView == languagePickerView {
+             return languages.count
+         } else if pickerView == continentPickerView {
+             return continents.count
+         }
+        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return languages[row]
+        if pickerView == languagePickerView {
+            return languages[row]
+        } else if pickerView == continentPickerView {
+            return continents[row]
+        }
+        return nil
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedLanguage = languages[row]
+        if pickerView == languagePickerView {
+            selectedLanguage = (languages[row] == "No Languages") ? nil : languages[row]
+        } else if pickerView == continentPickerView {
+            selectedContinent = (continents[row] == "No Continents") ? nil : continents[row]
+        }
     }
 }
