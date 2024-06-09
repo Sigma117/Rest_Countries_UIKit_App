@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark_background" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lK-G1-hQE">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <searchBar contentMode="redraw" placeholder="Search for country" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQI-RS-yRK">
                                 <rect key="frame" x="0.0" y="103" width="393" height="56"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
@@ -27,7 +30,7 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eGq-oN-7ck">
                                 <rect key="frame" x="0.0" y="159" width="393" height="659"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CountryCell" rowHeight="50" id="C1j-me-XQK">
                                         <rect key="frame" x="0.0" y="50" width="393" height="50"/>
@@ -51,14 +54,31 @@
                             <constraint firstItem="eGq-oN-7ck" firstAttribute="bottom" secondItem="kbH-X4-kJK" secondAttribute="bottom" id="Hlb-Bw-y9h"/>
                             <constraint firstItem="eGq-oN-7ck" firstAttribute="top" secondItem="gQI-RS-yRK" secondAttribute="bottom" id="JQU-DN-YpJ"/>
                             <constraint firstItem="gQI-RS-yRK" firstAttribute="trailing" secondItem="kbH-X4-kJK" secondAttribute="trailing" id="MuB-Pt-0c6"/>
+                            <constraint firstItem="2lK-G1-hQE" firstAttribute="leading" secondItem="kbH-X4-kJK" secondAttribute="leading" id="P2C-BY-ftl"/>
                             <constraint firstItem="gQI-RS-yRK" firstAttribute="top" secondItem="kbH-X4-kJK" secondAttribute="top" id="iMz-6n-KhM"/>
+                            <constraint firstItem="2lK-G1-hQE" firstAttribute="top" secondItem="Zpo-O5-UR3" secondAttribute="top" id="kgC-qK-dJx"/>
                             <constraint firstItem="gQI-RS-yRK" firstAttribute="leading" secondItem="kbH-X4-kJK" secondAttribute="leading" id="n1w-9i-cJc"/>
+                            <constraint firstItem="2lK-G1-hQE" firstAttribute="trailing" secondItem="kbH-X4-kJK" secondAttribute="trailing" id="szp-be-Xpg"/>
                             <constraint firstItem="eGq-oN-7ck" firstAttribute="trailing" secondItem="kbH-X4-kJK" secondAttribute="trailing" id="yWz-ac-fmf"/>
+                            <constraint firstAttribute="bottom" secondItem="2lK-G1-hQE" secondAttribute="bottom" id="zfM-Gw-hOm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7hm-nA-ybv"/>
+                    <navigationItem key="navigationItem" id="7hm-nA-ybv">
+                        <barButtonItem key="rightBarButtonItem" id="Yb3-Ue-hPj">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="p8V-X2-gN8">
+                                <rect key="frame" x="257" y="4.6666666666666679" width="120" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Filters"/>
+                                <connections>
+                                    <action selector="filterButtonTapped:" destination="WYS-LZ-qlM" eventType="touchUpInside" id="mtC-gT-ghj"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="countryTableView" destination="eGq-oN-7ck" id="UpD-46-hnu"/>
+                        <outlet property="filterButton" destination="p8V-X2-gN8" id="P3A-b6-wca"/>
                         <outlet property="searchBar" destination="gQI-RS-yRK" id="IfP-vB-d2D"/>
                         <segue destination="1OG-7n-n8o" kind="show" identifier="showDetailView" id="9kR-3X-acc"/>
                         <segue destination="pev-LG-ETl" kind="show" identifier="showFilterView" id="1sJ-Q3-59m"/>
@@ -76,13 +96,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark_background" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcR-sh-Aos">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="67P-wY-hvb">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="j6z-AU-hUW">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="355.66666666666669"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leanguages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mn-On-ofl">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mn-On-ofl">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="36.666666666666664"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <nil key="textColor"/>
@@ -99,70 +122,34 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeH-EJ-GzM" userLabel="ViewTop">
                                         <rect key="frame" x="0.0" y="359.66666666666674" width="393" height="355.33333333333326"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-ny-t8i">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-ny-t8i">
                                                 <rect key="frame" x="13.666666666666657" y="8" width="365.66666666666674" height="122"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrp-hW-JR7">
-                                                        <rect key="frame" x="133" y="0.0" width="99.666666666666686" height="25.333333333333332"/>
+                                                        <rect key="frame" x="133" y="0.0" width="99.666666666666686" height="31.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="HAg-gh-akV">
-                                                        <rect key="frame" x="0.0" y="39.333333333333314" width="365.66666666666669" height="34.333333333333343"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukN-MR-8Tk" userLabel="Africa">
-                                                                <rect key="frame" x="0.0" y="0.0" width="102" height="34.333333333333336"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Africa"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRk-9k-Dw8" userLabel="America">
-                                                                <rect key="frame" x="132" y="0.0" width="101.66666666666669" height="34.333333333333336"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="America"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMn-di-L4K" userLabel="Antarctica">
-                                                                <rect key="frame" x="263.66666666666663" y="0.0" width="102" height="34.333333333333336"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Antarctica"/>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="TRk-9k-Dw8" firstAttribute="baseline" secondItem="LMn-di-L4K" secondAttribute="firstBaseline" id="EYa-vr-Ben"/>
-                                                            <constraint firstItem="TRk-9k-Dw8" firstAttribute="centerX" secondItem="HAg-gh-akV" secondAttribute="centerX" id="r72-id-SgM"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="gvo-Tx-Udv">
-                                                        <rect key="frame" x="11.333333333333343" y="87.666666666666686" width="343" height="34.333333333333343"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ift-bU-5x8" userLabel="Europe">
-                                                                <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="34.333333333333336"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Europe"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjC-24-Ssg" userLabel="Asia">
-                                                                <rect key="frame" x="128.33333333333334" y="0.0" width="86.333333333333343" height="34.333333333333336"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Asia"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFA-PI-gaq" userLabel="Oceania">
-                                                                <rect key="frame" x="256.66666666666669" y="0.0" width="86.333333333333314" height="34.333333333333336"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Oceania"/>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="ift-bU-5x8" firstAttribute="baseline" secondItem="rjC-24-Ssg" secondAttribute="firstBaseline" id="LoV-cP-yA5"/>
-                                                        </constraints>
-                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8i-xu-ISa" userLabel="continentButton">
+                                                        <rect key="frame" x="114.66666666666667" y="45.333333333333314" width="136.33333333333331" height="31.333333333333329"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="ContinentFilter"/>
+                                                        <connections>
+                                                            <action selector="continentButtonTapped:" destination="pev-LG-ETl" eventType="touchUpInside" id="7km-Ak-QO0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83O-N0-DZy" userLabel="filterButton">
+                                                        <rect key="frame" x="152" y="90.666666666666686" width="62" height="31.333333333333329"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Filter"/>
+                                                        <connections>
+                                                            <action selector="applyFilter:" destination="pev-LG-ETl" eventType="touchUpInside" id="JtR-FX-sMN"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="HAg-gh-akV" firstAttribute="leading" secondItem="fgu-ny-t8i" secondAttribute="leadingMargin" id="MPM-mF-7V0"/>
-                                                    <constraint firstItem="gvo-Tx-Udv" firstAttribute="leading" secondItem="fgu-ny-t8i" secondAttribute="leading" constant="11.333333333333343" id="grE-zS-Vd5"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="fgu-ny-t8i" firstAttribute="top" secondItem="MeH-EJ-GzM" secondAttribute="topMargin" id="PY4-un-QKB"/>
                                             <constraint firstAttribute="bottom" secondItem="fgu-ny-t8i" secondAttribute="bottom" constant="225.33333333333326" id="T2N-Qo-bod"/>
@@ -181,14 +168,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="67P-wY-hvb" firstAttribute="top" secondItem="Bqi-nw-r7S" secondAttribute="top" id="1If-h3-rTm"/>
+                            <constraint firstItem="tcR-sh-Aos" firstAttribute="leading" secondItem="Bqi-nw-r7S" secondAttribute="leading" id="Ibv-GV-uxg"/>
+                            <constraint firstAttribute="bottom" secondItem="tcR-sh-Aos" secondAttribute="bottom" id="JpH-tU-amG"/>
                             <constraint firstItem="67P-wY-hvb" firstAttribute="leading" secondItem="Bqi-nw-r7S" secondAttribute="leading" id="ZAy-6i-fKv"/>
+                            <constraint firstItem="tcR-sh-Aos" firstAttribute="trailing" secondItem="Bqi-nw-r7S" secondAttribute="trailing" id="dxP-Mm-d64"/>
                             <constraint firstItem="Bqi-nw-r7S" firstAttribute="bottom" secondItem="67P-wY-hvb" secondAttribute="bottom" id="emn-vU-hw7"/>
                             <constraint firstItem="67P-wY-hvb" firstAttribute="trailing" secondItem="Bqi-nw-r7S" secondAttribute="trailing" id="rOu-kc-tRo"/>
+                            <constraint firstItem="tcR-sh-Aos" firstAttribute="top" secondItem="exr-Ep-d62" secondAttribute="top" id="s6h-BN-vRl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Roa-WA-a7V"/>
+                    <connections>
+                        <outlet property="continentButton" destination="J8i-xu-ISa" id="Msu-ad-eNY"/>
+                        <outlet property="languagePickerView" destination="I1M-Pl-KUs" id="RPz-J6-7xd"/>
+                        <segue destination="joz-iS-9Cr" kind="unwind" identifier="unwindToCountryView" unwindAction="unwindToCountryView:" id="q8g-eT-a4W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRL-Mm-zgu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="joz-iS-9Cr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="652.67175572519079" y="672.53521126760563"/>
         </scene>
@@ -200,6 +197,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark_background" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PhA-FQ-HHw">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cg6-R5-2sD">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
@@ -266,10 +266,14 @@
                         <viewLayoutGuide key="safeArea" id="tl5-7W-R6b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="PhA-FQ-HHw" firstAttribute="top" secondItem="sra-4Y-wfK" secondAttribute="top" id="8tP-Kq-chS"/>
                             <constraint firstItem="cg6-R5-2sD" firstAttribute="leading" secondItem="tl5-7W-R6b" secondAttribute="leading" id="BbE-la-xFs"/>
+                            <constraint firstItem="PhA-FQ-HHw" firstAttribute="trailing" secondItem="tl5-7W-R6b" secondAttribute="trailing" id="GkQ-wW-oBV"/>
                             <constraint firstItem="tl5-7W-R6b" firstAttribute="bottom" secondItem="cg6-R5-2sD" secondAttribute="bottom" id="JbC-tT-l5h"/>
+                            <constraint firstItem="PhA-FQ-HHw" firstAttribute="leading" secondItem="tl5-7W-R6b" secondAttribute="leading" id="PGq-AZ-6ZF"/>
                             <constraint firstItem="cg6-R5-2sD" firstAttribute="trailing" secondItem="tl5-7W-R6b" secondAttribute="trailing" id="czL-ER-8A3"/>
                             <constraint firstItem="cg6-R5-2sD" firstAttribute="top" secondItem="tl5-7W-R6b" secondAttribute="top" id="nPW-mh-9Z6"/>
+                            <constraint firstAttribute="bottom" secondItem="PhA-FQ-HHw" secondAttribute="bottom" id="rPu-zs-nKz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" customizationIdentifier="showDetailView" id="q6t-ki-iXd"/>
@@ -309,6 +313,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dark_background" width="836" height="661"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

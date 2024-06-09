@@ -11,9 +11,12 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var countryTableView: UITableView!
+    @IBOutlet var filterButton: UIButton!
     
     var countries: [CountryData] = []
     var filteredCountries: [CountryData] = []
+    var selectedContinent: String?
+    var selectedLanguage: String?
     
     func sortCountries() {
         countries.sort { $0.name.common < $1.name.common }
@@ -32,8 +35,12 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
         countryTableView.delegate = self
         countryTableView.register(UITableViewCell.self, forCellReuseIdentifier: "CountryCell")
         
-        // Fetch data
-        CountryManager().fetchCountry("all") { [weak self] data in
+        fetchData("all")
+
+    }
+    
+    func fetchData(_ type: String) {
+        CountryManager().fetchCountry(type) { [weak self] data in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 if let data = data {
@@ -56,6 +63,7 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath)
         let country = filteredCountries[indexPath.row]
         cell.textLabel?.text = country.name.common
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
         
         if let flag = country.flag {
             cell.textLabel?.text = "\(flag) \(country.name.common)"
@@ -68,7 +76,6 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         self.performSegue(withIdentifier: "showDetailView", sender: filteredCountries[indexPath.row])
     }
     
@@ -80,7 +87,6 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-
     
     // MARK: - UISearchBarDelegate
     
@@ -96,9 +102,50 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
     }
-
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         searchBar.endEditing(true)
+    }
+    
+    // MARK: - Unwind and filters
+    
+    @IBAction func filterButtonTapped(_ sender: UIButton) {
+        // Perform another fetch request becase in the first one we fetch only names & flags, this time we fetch names, flags, regions, languages.
+        fetchData("filter")
+        performSegue(withIdentifier: "showFilterView", sender: self)
+    }
+    
+    
+    @IBAction func unwindToCountryView(_ unwindSegue: UIStoryboardSegue) {
+        print("tornato indietro nella countryview")
+        if let filterVC = unwindSegue.source as? FilterViewController {
+            selectedContinent = filterVC.selectedContinent
+            selectedLanguage = filterVC.selectedLanguage
+            print("Selected Continent: \(selectedContinent ?? "None")")
+            print("Selected Language: \(selectedLanguage ?? "None")")
+            if (selectedContinent != nil) || (selectedLanguage != nil) {
+                applyFilters()
+            } else {
+                print("no filter selected")
+            }
+        }
+    }
+    
+    func applyFilters() {
+        filteredCountries = countries
+        
+        if let continent = selectedContinent {
+            filteredCountries = filteredCountries.filter { $0.region == continent }
+        }
+        
+        if let language = selectedLanguage {
+            filteredCountries = filteredCountries.filter { country in
+                country.languages?.contains { $0.value == language } ?? false
+            }
+        }
+        DispatchQueue.main.async {
+            self.countryTableView.reloadData()
+        }
     }
 }
 

@@ -51,7 +51,7 @@ class DetailViewController: UIViewController {
         regionLabel.text = "Belong region: \(country.region ?? "N/A")"
         populationLabel.text = "Country current poppulation: \(country.population ?? 0)"
         timezoneLabel.text = "Country timezone: \(country.timezones?.joined() ?? "N/A")"
-        languageLabel.text = "language: \(country.languages?.values.first ?? "N/A")"
+        languageLabel.text = "Language: \(country.languages?.values.first ?? "N/A")"
         if let unMember = country.unMember {
             if unMember {
                 unMemberLabel.text = "UN Member: Yes"

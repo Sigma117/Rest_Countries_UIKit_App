@@ -16,6 +16,8 @@ class CountryManager {
         let endpoint: String
         if countryName.lowercased() == "all" {
             endpoint = "all?fields=name,flag"
+        } else if countryName == "filter" {
+            endpoint = "all?fields=name,flag,region,languages"
         } else {
             endpoint = "name/\(countryName)?fields=name,capital,region,latlng,flag,population,timezones,languages,unMember"
         }
