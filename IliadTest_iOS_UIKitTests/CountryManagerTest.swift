@@ -32,11 +32,7 @@ final class CountryManagerTest: XCTestCase {
         MonkURLProtocol.stubResponseData = jsonString.data(using: .utf8)
         
         let expectation = self.expectation(description: "Api request response ad expected")
-        
-//        sut.fetchCountry(<#T##countryName: String##String#>) { (countryDataResponseMondel, error) in
-//            <#code#>
-//        }
-    }
+        }
     
     
 
