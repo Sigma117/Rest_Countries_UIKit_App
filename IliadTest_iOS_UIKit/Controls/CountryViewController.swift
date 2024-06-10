@@ -12,18 +12,14 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var countryTableView: UITableView!
     @IBOutlet var filterButton: UIButton!
+    @IBOutlet var resetFilterButton: UIButton!
+    @IBOutlet var fetchDataIndicator: UIActivityIndicatorView!
     
     var countries: [CountryData] = []
     var filteredCountries: [CountryData] = []
     var selectedContinent: String?
     var selectedLanguage: String?
-    
-    func sortCountries() {
-        countries.sort { $0.name.common < $1.name.common }
-        filteredCountries.sort { $0.name.common < $1.name.common }
-        countryTableView.reloadData()
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,23 +31,13 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
         countryTableView.delegate = self
         countryTableView.register(UITableViewCell.self, forCellReuseIdentifier: "CountryCell")
         
+        // Setup Activity Indicator
+        fetchDataIndicator.center = self.view.center
+        
         fetchData("all")
 
     }
     
-    func fetchData(_ type: String) {
-        CountryManager().fetchCountry(type) { [weak self] data in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                if let data = data {
-                    self.countries = data
-                    self.filteredCountries = data
-                    self.sortCountries()
-                    self.countryTableView.reloadData()
-                }
-            }
-        }
-    }
     
     // MARK: - UITableViewDataSource
     
@@ -133,6 +119,25 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    
+    @IBAction func resetFilterButtonTapped(_ sender: Any) {
+        resetFilters()
+    }
+    
+    func sortCountries() {
+        countries.sort { $0.name.common < $1.name.common }
+        filteredCountries.sort { $0.name.common < $1.name.common }
+        countryTableView.reloadData()
+    }
+    
+    func resetFilters() {
+        selectedContinent = nil
+        selectedLanguage = nil
+        searchBar.text = ""
+        filteredCountries = countries
+        countryTableView.reloadData()
+    }
+    
     func applyFilters() {
         filteredCountries = countries
         
@@ -147,6 +152,23 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         DispatchQueue.main.async {
             self.countryTableView.reloadData()
+        }
+    }
+    
+    // MARK: - Fetch request
+    func fetchData(_ type: String) {
+        fetchDataIndicator.startAnimating()
+        CountryManager().fetchCountry(type) { [weak self] data in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.fetchDataIndicator.stopAnimating()
+                if let data = data {
+                    self.countries = data
+                    self.filteredCountries = data
+                    self.sortCountries()
+                    self.countryTableView.reloadData()
+                }
+            }
         }
     }
 }

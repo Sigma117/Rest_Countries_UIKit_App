@@ -48,6 +48,10 @@
                                     <outlet property="delegate" destination="WYS-LZ-qlM" id="3ZQ-7R-EiC"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="FiM-b8-GoE">
+                                <rect key="frame" x="0.0" y="404" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kbH-X4-kJK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,6 +70,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7hm-nA-ybv">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="9hA-j6-NRb">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="F2a-eI-QQM">
+                                <rect key="frame" x="16" y="5" width="118" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reset Filters"/>
+                                <connections>
+                                    <action selector="resetFilterButtonTapped:" destination="WYS-LZ-qlM" eventType="touchUpInside" id="dfP-yA-lvx"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="Yb3-Ue-hPj">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="p8V-X2-gN8">
                                 <rect key="frame" x="257" y="4.6666666666666679" width="120" height="35"/>
@@ -80,7 +95,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="countryTableView" destination="eGq-oN-7ck" id="UpD-46-hnu"/>
+                        <outlet property="fetchDataIndicator" destination="FiM-b8-GoE" id="ec3-QN-a4v"/>
                         <outlet property="filterButton" destination="p8V-X2-gN8" id="P3A-b6-wca"/>
+                        <outlet property="resetFilterButton" destination="F2a-eI-QQM" id="aEx-WD-Bdz"/>
                         <outlet property="searchBar" destination="gQI-RS-yRK" id="IfP-vB-d2D"/>
                         <segue destination="1OG-7n-n8o" kind="show" identifier="showDetailView" id="9kR-3X-acc"/>
                         <segue destination="pev-LG-ETl" kind="show" identifier="showFilterView" id="1sJ-Q3-59m"/>
@@ -113,12 +130,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-Pl-KUs">
+                                            <pickerView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-Pl-KUs">
                                                 <rect key="frame" x="0.0" y="54" width="393" height="301.66666666666669"/>
                                             </pickerView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="8mn-On-ofl" firstAttribute="centerX" secondItem="j6z-AU-hUW" secondAttribute="centerX" id="cSg-bd-jRc"/>
+                                            <constraint firstItem="I1M-Pl-KUs" firstAttribute="centerX" secondItem="j6z-AU-hUW" secondAttribute="centerX" id="yS9-H6-lq5"/>
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeH-EJ-GzM" userLabel="ViewTop">
@@ -148,7 +166,7 @@
                                                 </connections>
                                             </button>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDf-vG-1BI" userLabel="Continent Picker View">
-                                                <rect key="frame" x="37" y="70" width="320" height="216"/>
+                                                <rect key="frame" x="36.666666666666657" y="69.666666666666686" width="320" height="216"/>
                                             </pickerView>
                                         </subviews>
                                         <constraints>
@@ -268,6 +286,10 @@
                                     </mapView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="umu-Ag-dFW">
+                                <rect key="frame" x="0.0" y="404" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tl5-7W-R6b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -286,6 +308,7 @@
                     <connections>
                         <outlet property="capitalLabel" destination="XqQ-UP-i1R" id="nNE-hz-Dp4"/>
                         <outlet property="countryNameTitle" destination="Gul-H1-Z2Q" id="IWZ-XF-VVW"/>
+                        <outlet property="fetchDataIndicator" destination="umu-Ag-dFW" id="zeC-Lf-bhX"/>
                         <outlet property="languageLabel" destination="zGZ-SI-2Jd" id="ozs-Bh-whg"/>
                         <outlet property="mapView" destination="taU-SA-Dio" id="nP3-xE-s93"/>
                         <outlet property="officialNameLabel" destination="kg2-dj-mPI" id="2OA-hs-vdD"/>

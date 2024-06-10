@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var unMemberLabel: UILabel!
     @IBOutlet var languageLabel: UILabel!
     @IBOutlet var mapView: MKMapView!
-    
+    @IBOutlet var fetchDataIndicator: UIActivityIndicatorView!
     
     var countryName: String?
     var countryManager = CountryManager()
@@ -31,12 +31,16 @@ class DetailViewController: UIViewController {
         if let countryName = countryName {
             fetchCountryDetails(countryName: countryName)
         }
+        
+        fetchDataIndicator.center = self.view.center
     }
     
     func fetchCountryDetails(countryName: String) {
+        fetchDataIndicator.startAnimating()
         countryManager.fetchCountry(countryName) { [weak self] data in
             guard let self = self, let country = data?.first else { return }
             DispatchQueue.main.async {
+                self.fetchDataIndicator.stopAnimating()
                 self.updateUI(with: country)
             }
         }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C39E4A62C15A73600340EB9 /* CountryManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39E4A52C15A73600340EB9 /* CountryManagerTest.swift */; };
+		8C39E4A82C15A79300340EB9 /* MonkURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39E4A72C15A79300340EB9 /* MonkURLProtocol.swift */; };
 		8C925B392C13173900F7BF12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C925B382C13173900F7BF12 /* DetailViewController.swift */; };
 		8C925B3B2C135FFD00F7BF12 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C925B3A2C135FFD00F7BF12 /* FilterViewController.swift */; };
 		8CADDDFC2C0EFE9A0058FF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDFB2C0EFE9A0058FF15 /* AppDelegate.swift */; };
@@ -16,9 +18,9 @@
 		8CADDE062C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDE042C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.xcdatamodeld */; };
 		8CADDE082C0EFE9B0058FF15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CADDE072C0EFE9B0058FF15 /* Assets.xcassets */; };
 		8CADDE0B2C0EFE9B0058FF15 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8CADDE0A2C0EFE9B0058FF15 /* Base */; };
-		8CADDE162C0EFE9C0058FF15 /* IliadTest_iOS_UIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDE152C0EFE9C0058FF15 /* IliadTest_iOS_UIKitTests.swift */; };
 		8CADDE202C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDE1F2C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITests.swift */; };
 		8CADDE222C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDE212C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITestsLaunchTests.swift */; };
+		8CF2D8AF2C16CF1500E9AEB9 /* CountryDataErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2D8AE2C16CF1500E9AEB9 /* CountryDataErrors.swift */; };
 		8CF7458D2C11A1CC00C4ABB0 /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7458C2C11A1CC00C4ABB0 /* CountryManager.swift */; };
 		8CF745A32C11F13F00C4ABB0 /* CountryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF745A22C11F13F00C4ABB0 /* CountryData.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C39E4A52C15A73600340EB9 /* CountryManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerTest.swift; sourceTree = "<group>"; };
+		8C39E4A72C15A79300340EB9 /* MonkURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkURLProtocol.swift; sourceTree = "<group>"; };
 		8C925B382C13173900F7BF12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8C925B3A2C135FFD00F7BF12 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		8CADDDF82C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IliadTest_iOS_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,10 +57,10 @@
 		8CADDE0A2C0EFE9B0058FF15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CADDE0C2C0EFE9B0058FF15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CADDE112C0EFE9C0058FF15 /* IliadTest_iOS_UIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IliadTest_iOS_UIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CADDE152C0EFE9C0058FF15 /* IliadTest_iOS_UIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IliadTest_iOS_UIKitTests.swift; sourceTree = "<group>"; };
 		8CADDE1B2C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IliadTest_iOS_UIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CADDE1F2C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IliadTest_iOS_UIKitUITests.swift; sourceTree = "<group>"; };
 		8CADDE212C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IliadTest_iOS_UIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8CF2D8AE2C16CF1500E9AEB9 /* CountryDataErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataErrors.swift; sourceTree = "<group>"; };
 		8CF7458C2C11A1CC00C4ABB0 /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
 		8CF745A22C11F13F00C4ABB0 /* CountryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,7 +128,8 @@
 		8CADDE142C0EFE9C0058FF15 /* IliadTest_iOS_UIKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				8CADDE152C0EFE9C0058FF15 /* IliadTest_iOS_UIKitTests.swift */,
+				8C39E4A52C15A73600340EB9 /* CountryManagerTest.swift */,
+				8C39E4A72C15A79300340EB9 /* MonkURLProtocol.swift */,
 			);
 			path = IliadTest_iOS_UIKitTests;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			children = (
 				8CF7458C2C11A1CC00C4ABB0 /* CountryManager.swift */,
 				8CF745A22C11F13F00C4ABB0 /* CountryData.swift */,
+				8CF2D8AE2C16CF1500E9AEB9 /* CountryDataErrors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 				8CADDE062C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.xcdatamodeld in Sources */,
 				8CADDE002C0EFE9A0058FF15 /* CountryViewController.swift in Sources */,
 				8CADDDFC2C0EFE9A0058FF15 /* AppDelegate.swift in Sources */,
+				8CF2D8AF2C16CF1500E9AEB9 /* CountryDataErrors.swift in Sources */,
 				8CF7458D2C11A1CC00C4ABB0 /* CountryManager.swift in Sources */,
 				8C925B3B2C135FFD00F7BF12 /* FilterViewController.swift in Sources */,
 				8CF745A32C11F13F00C4ABB0 /* CountryData.swift in Sources */,
@@ -312,7 +319,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CADDE162C0EFE9C0058FF15 /* IliadTest_iOS_UIKitTests.swift in Sources */,
+				8C39E4A62C15A73600340EB9 /* CountryManagerTest.swift in Sources */,
+				8C39E4A82C15A79300340EB9 /* MonkURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +500,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,7 +532,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
