@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var fetchDataIndicator: UIActivityIndicatorView!
     
     var countryName: String?
-    var countryManager = CountryManager()
+    var countryManager = CountryManagerApiRequest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,11 @@ class DetailViewController: UIViewController {
     
     func fetchCountryDetails(countryName: String) {
         fetchDataIndicator.startAnimating()
-        countryManager.fetchCountry(countryName) { [weak self] data in
+        countryManager.fetchCountry(countryName) { [weak self] (data, error) in
+            if let error = error {
+                // TODO
+            }
+            
             guard let self = self, let country = data?.first else { return }
             DispatchQueue.main.async {
                 self.fetchDataIndicator.stopAnimating()

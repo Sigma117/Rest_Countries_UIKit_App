@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C39E4A62C15A73600340EB9 /* CountryManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39E4A52C15A73600340EB9 /* CountryManagerTest.swift */; };
-		8C39E4A82C15A79300340EB9 /* MonkURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39E4A72C15A79300340EB9 /* MonkURLProtocol.swift */; };
+		8C172EFD2C2160BA0031D66B /* CountryManagerApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C172EFC2C2160BA0031D66B /* CountryManagerApiRequestTests.swift */; };
+		8C172EFF2C2162430031D66B /* CountryManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C172EFE2C2162430031D66B /* CountryManagerError.swift */; };
 		8C925B392C13173900F7BF12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C925B382C13173900F7BF12 /* DetailViewController.swift */; };
 		8C925B3B2C135FFD00F7BF12 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C925B3A2C135FFD00F7BF12 /* FilterViewController.swift */; };
 		8CADDDFC2C0EFE9A0058FF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDFB2C0EFE9A0058FF15 /* AppDelegate.swift */; };
@@ -20,7 +20,7 @@
 		8CADDE0B2C0EFE9B0058FF15 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8CADDE0A2C0EFE9B0058FF15 /* Base */; };
 		8CADDE202C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDE1F2C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITests.swift */; };
 		8CADDE222C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDE212C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITestsLaunchTests.swift */; };
-		8CF7458D2C11A1CC00C4ABB0 /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7458C2C11A1CC00C4ABB0 /* CountryManager.swift */; };
+		8CF7458D2C11A1CC00C4ABB0 /* CountryManagerApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7458C2C11A1CC00C4ABB0 /* CountryManagerApiRequest.swift */; };
 		8CF745A32C11F13F00C4ABB0 /* CountryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF745A22C11F13F00C4ABB0 /* CountryData.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8C39E4A52C15A73600340EB9 /* CountryManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerTest.swift; sourceTree = "<group>"; };
-		8C39E4A72C15A79300340EB9 /* MonkURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkURLProtocol.swift; sourceTree = "<group>"; };
+		8C172EFC2C2160BA0031D66B /* CountryManagerApiRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerApiRequestTests.swift; sourceTree = "<group>"; };
+		8C172EFE2C2162430031D66B /* CountryManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerError.swift; sourceTree = "<group>"; };
 		8C925B382C13173900F7BF12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8C925B3A2C135FFD00F7BF12 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		8CADDDF82C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IliadTest_iOS_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +59,7 @@
 		8CADDE1B2C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IliadTest_iOS_UIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CADDE1F2C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IliadTest_iOS_UIKitUITests.swift; sourceTree = "<group>"; };
 		8CADDE212C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IliadTest_iOS_UIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8CF7458C2C11A1CC00C4ABB0 /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
+		8CF7458C2C11A1CC00C4ABB0 /* CountryManagerApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerApiRequest.swift; sourceTree = "<group>"; };
 		8CF745A22C11F13F00C4ABB0 /* CountryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,8 +126,7 @@
 		8CADDE142C0EFE9C0058FF15 /* IliadTest_iOS_UIKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C39E4A52C15A73600340EB9 /* CountryManagerTest.swift */,
-				8C39E4A72C15A79300340EB9 /* MonkURLProtocol.swift */,
+				8C172EFC2C2160BA0031D66B /* CountryManagerApiRequestTests.swift */,
 			);
 			path = IliadTest_iOS_UIKitTests;
 			sourceTree = "<group>";
@@ -144,8 +143,9 @@
 		8CF745892C11992F00C4ABB0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8CF7458C2C11A1CC00C4ABB0 /* CountryManager.swift */,
+				8CF7458C2C11A1CC00C4ABB0 /* CountryManagerApiRequest.swift */,
 				8CF745A22C11F13F00C4ABB0 /* CountryData.swift */,
+				8C172EFE2C2162430031D66B /* CountryManagerError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,6 +240,7 @@
 					};
 					8CADDE102C0EFE9C0058FF15 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 						TestTargetID = 8CADDDF72C0EFE9A0058FF15;
 					};
 					8CADDE1A2C0EFE9C0058FF15 = {
@@ -303,10 +304,11 @@
 				8CADDE062C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.xcdatamodeld in Sources */,
 				8CADDE002C0EFE9A0058FF15 /* CountryViewController.swift in Sources */,
 				8CADDDFC2C0EFE9A0058FF15 /* AppDelegate.swift in Sources */,
-				8CF7458D2C11A1CC00C4ABB0 /* CountryManager.swift in Sources */,
+				8CF7458D2C11A1CC00C4ABB0 /* CountryManagerApiRequest.swift in Sources */,
 				8C925B3B2C135FFD00F7BF12 /* FilterViewController.swift in Sources */,
 				8CF745A32C11F13F00C4ABB0 /* CountryData.swift in Sources */,
 				8CADDDFE2C0EFE9A0058FF15 /* SceneDelegate.swift in Sources */,
+				8C172EFF2C2162430031D66B /* CountryManagerError.swift in Sources */,
 				8C925B392C13173900F7BF12 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,8 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C39E4A62C15A73600340EB9 /* CountryManagerTest.swift in Sources */,
-				8C39E4A82C15A79300340EB9 /* MonkURLProtocol.swift in Sources */,
+				8C172EFD2C2160BA0031D66B /* CountryManagerApiRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +551,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 92JR3C32ZP;
@@ -559,6 +561,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "StefanoZhao.IliadTest-iOS-UIKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "IliadTest_iOS_UIKitTests/IliadTest_iOS_UIKitTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IliadTest_iOS_UIKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IliadTest_iOS_UIKit";
@@ -570,6 +574,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 92JR3C32ZP;
@@ -579,6 +584,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "StefanoZhao.IliadTest-iOS-UIKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "IliadTest_iOS_UIKitTests/IliadTest_iOS_UIKitTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IliadTest_iOS_UIKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IliadTest_iOS_UIKit";

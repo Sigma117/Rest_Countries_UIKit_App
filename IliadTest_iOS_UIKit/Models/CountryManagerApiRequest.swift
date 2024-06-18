@@ -9,9 +9,9 @@
 
 import Foundation
 
-class CountryManager {
+class CountryManagerApiRequest {
     
-    func fetchCountry(_ countryName: String, completion: @escaping ([CountryData]?) -> Void) {
+    func fetchCountry(_ countryName: String, completion: @escaping ([CountryData]?, CountryManagerError?) -> Void) {
         let baseCountryURL = "https://restcountries.com/v3.1/"
         let endpoint: String
         if countryName.lowercased() == "all" {
@@ -26,7 +26,7 @@ class CountryManager {
         performRequest(urlString, completion: completion)
     }
     
-    private func performRequest(_ urlString: String, completion: @escaping ([CountryData]?) -> Void) {
+    private func performRequest(_ urlString: String, completion: @escaping ([CountryData]?, CountryManagerError?) -> Void) {
         
         // Create URL
         if let url = URL(string: urlString) {
@@ -37,17 +37,16 @@ class CountryManager {
             // Session Task
             let task = session.dataTask(with: url) { data, response, error in
                 if let error = error {
-                    print(error)
-                    completion(nil)
+                    completion(nil, CountryManagerError.failedRequest)
                     return
                 }
                 if let receivedData = data {
                     let decodedData = self.parseJSON(countryData: receivedData)
-                    completion(decodedData)
+                    completion(decodedData, nil)
                     
                 } else {
                     print("No data received")
-                    completion(nil)
+                    completion(nil, CountryManagerError.invalidResponseModel)
                 }
             }
             // Start Task
@@ -60,40 +59,6 @@ class CountryManager {
         
         do{
             let decodedCountryData = try decoder.decode([CountryData].self, from: countryData)
-            for country in decodedCountryData {
-                print(country.name.common)
-                if let capital = country.capital {
-                    print("Capital: \(capital.joined(separator: ", "))")
-                }
-                if let region = country.region {
-                    print("Region: \(region)")
-                }
-                if let latlng = country.latlng {
-                    print("Coordinates: \(latlng.map { String($0) }.joined(separator: ", "))")
-                }
-                if let flag = country.flag {
-                    print("Flag: \(flag)")
-                }
-                if let population = country.population {
-                    print("Population: \(population)")
-                }
-                if let timezones = country.timezones {
-                    print("Timezones: \(timezones.joined(separator: ", "))")
-                }
-                if let languages = country.languages{
-                    for (code, language) in languages {
-                        print("Language code: \(code), Language name: \(language)")
-                    }
-                }
-                
-                if let unMember = country.unMember {
-                    if unMember {
-                        print("unMemebr: True")
-                    } else {
-                        print("unMemebr: False")
-                    }
-                }
-            }
             return decodedCountryData
         } catch {
             print(error)

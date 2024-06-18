@@ -158,7 +158,7 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     // MARK: - Fetch request
     func fetchData(_ type: String) {
         fetchDataIndicator.startAnimating()
-        CountryManager().fetchCountry(type) { [weak self] data in
+        CountryManagerApiRequest().fetchCountry(type) { [weak self] data in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.fetchDataIndicator.stopAnimating()
