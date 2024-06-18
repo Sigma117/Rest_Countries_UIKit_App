@@ -3,4 +3,52 @@
    uuid = "7B2D2C99-B8C4-4BEB-A98D-A1381FCD121C"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E865676-1AD2-47D8-BBA4-EE77008DECB9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IliadTest_iOS_UIKitTests/Mocks/MockURLProtocol.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "startLoading()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7E865676-1AD2-47D8-BBA4-EE77008DECB9 - a37eef4a332fbf97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IliadTest_iOS_UIKitTests.MockURLProtocol.startLoading() -&gt; ()"
+                  moduleName = "IliadTest_iOS_UIKitTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stefanozhao/Developer/Xcode/My_Workspace/IliadTest_iOS_UIKit/IliadTest_iOS_UIKitTests/Mocks/MockURLProtocol.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+               <Location
+                  uuid = "7E865676-1AD2-47D8-BBA4-EE77008DECB9 - a37eef4a332fbf97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IliadTest_iOS_UIKitTests.MockURLProtocol.startLoading() -&gt; ()"
+                  moduleName = "IliadTest_iOS_UIKitTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stefanozhao/Developer/Xcode/My_Workspace/IliadTest_iOS_UIKit/IliadTest_iOS_UIKitTests/Mocks/MockURLProtocol.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

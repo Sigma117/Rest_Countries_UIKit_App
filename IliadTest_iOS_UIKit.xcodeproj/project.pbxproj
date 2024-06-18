@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C172EFD2C2160BA0031D66B /* CountryManagerApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C172EFC2C2160BA0031D66B /* CountryManagerApiRequestTests.swift */; };
 		8C172EFF2C2162430031D66B /* CountryManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C172EFE2C2162430031D66B /* CountryManagerError.swift */; };
 		8C172F012C216E4C0031D66B /* CountryManagerCostants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C172F002C216E4C0031D66B /* CountryManagerCostants.swift */; };
+		8C172F042C2190170031D66B /* CountryManagerApiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C172F032C2190170031D66B /* CountryManagerApiRequestProtocol.swift */; };
+		8C172F072C2190910031D66B /* MockCountryManagerApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C172F062C2190910031D66B /* MockCountryManagerApiRequest.swift */; };
+		8C172F092C2195BE0031D66B /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C172F082C2195BE0031D66B /* MockURLProtocol.swift */; };
 		8C925B392C13173900F7BF12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C925B382C13173900F7BF12 /* DetailViewController.swift */; };
 		8C925B3B2C135FFD00F7BF12 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C925B3A2C135FFD00F7BF12 /* FilterViewController.swift */; };
 		8CADDDFC2C0EFE9A0058FF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDFB2C0EFE9A0058FF15 /* AppDelegate.swift */; };
@@ -23,6 +25,7 @@
 		8CADDE222C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDE212C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITestsLaunchTests.swift */; };
 		8CF7458D2C11A1CC00C4ABB0 /* CountryManagerApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7458C2C11A1CC00C4ABB0 /* CountryManagerApiRequest.swift */; };
 		8CF745A32C11F13F00C4ABB0 /* CountryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF745A22C11F13F00C4ABB0 /* CountryData.swift */; };
+		8CF913152C21B756009189AC /* CountryManagerApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF913142C21B756009189AC /* CountryManagerApiRequestTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,9 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8C172EFC2C2160BA0031D66B /* CountryManagerApiRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerApiRequestTests.swift; sourceTree = "<group>"; };
 		8C172EFE2C2162430031D66B /* CountryManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerError.swift; sourceTree = "<group>"; };
 		8C172F002C216E4C0031D66B /* CountryManagerCostants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerCostants.swift; sourceTree = "<group>"; };
+		8C172F032C2190170031D66B /* CountryManagerApiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerApiRequestProtocol.swift; sourceTree = "<group>"; };
+		8C172F062C2190910031D66B /* MockCountryManagerApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryManagerApiRequest.swift; sourceTree = "<group>"; };
+		8C172F082C2195BE0031D66B /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		8C925B382C13173900F7BF12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8C925B3A2C135FFD00F7BF12 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		8CADDDF82C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IliadTest_iOS_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +68,7 @@
 		8CADDE212C0EFE9C0058FF15 /* IliadTest_iOS_UIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IliadTest_iOS_UIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8CF7458C2C11A1CC00C4ABB0 /* CountryManagerApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerApiRequest.swift; sourceTree = "<group>"; };
 		8CF745A22C11F13F00C4ABB0 /* CountryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryData.swift; sourceTree = "<group>"; };
+		8CF913142C21B756009189AC /* CountryManagerApiRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerApiRequestTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C172F022C218FFB0031D66B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8C172F032C2190170031D66B /* CountryManagerApiRequestProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8C172F052C2190620031D66B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8C172F062C2190910031D66B /* MockCountryManagerApiRequest.swift */,
+				8C172F082C2195BE0031D66B /* MockURLProtocol.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		8CADDDEF2C0EFE9A0058FF15 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +136,7 @@
 		8CADDDFA2C0EFE9A0058FF15 /* IliadTest_iOS_UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8C172F022C218FFB0031D66B /* Protocols */,
 				8CF745892C11992F00C4ABB0 /* Models */,
 				8CF7458A2C11993900C4ABB0 /* Views */,
 				8CF7458B2C11993F00C4ABB0 /* Controls */,
@@ -128,7 +152,8 @@
 		8CADDE142C0EFE9C0058FF15 /* IliadTest_iOS_UIKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C172EFC2C2160BA0031D66B /* CountryManagerApiRequestTests.swift */,
+				8C172F052C2190620031D66B /* Mocks */,
+				8CF913142C21B756009189AC /* CountryManagerApiRequestTests.swift */,
 			);
 			path = IliadTest_iOS_UIKitTests;
 			sourceTree = "<group>";
@@ -312,6 +337,7 @@
 				8C925B3B2C135FFD00F7BF12 /* FilterViewController.swift in Sources */,
 				8CF745A32C11F13F00C4ABB0 /* CountryData.swift in Sources */,
 				8CADDDFE2C0EFE9A0058FF15 /* SceneDelegate.swift in Sources */,
+				8C172F042C2190170031D66B /* CountryManagerApiRequestProtocol.swift in Sources */,
 				8C172EFF2C2162430031D66B /* CountryManagerError.swift in Sources */,
 				8C925B392C13173900F7BF12 /* DetailViewController.swift in Sources */,
 			);
@@ -321,7 +347,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C172EFD2C2160BA0031D66B /* CountryManagerApiRequestTests.swift in Sources */,
+				8CF913152C21B756009189AC /* CountryManagerApiRequestTests.swift in Sources */,
+				8C172F092C2195BE0031D66B /* MockURLProtocol.swift in Sources */,
+				8C172F072C2190910031D66B /* MockCountryManagerApiRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +593,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "StefanoZhao.IliadTest-iOS-UIKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "IliadTest_iOS_UIKitTests/IliadTest_iOS_UIKitTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,7 +615,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "StefanoZhao.IliadTest-iOS-UIKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "IliadTest_iOS_UIKitTests/IliadTest_iOS_UIKitTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IliadTest_iOS_UIKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IliadTest_iOS_UIKit";

@@ -9,7 +9,7 @@
 
 import Foundation
 
-class CountryManagerApiRequest {
+class CountryManagerApiRequest: CountryManagerApiRequestProtocol {
     
     private var urlBaseString: String
     private var urlSession: URLSession
@@ -19,7 +19,7 @@ class CountryManagerApiRequest {
         self.urlSession = urlSession
     }
     
-    func fetchCountry (countryName: String, completion: @escaping ([CountryData]?, CountryManagerError?) -> Void) {
+    func fetchCountry (countryName: String, completionHandler: @escaping ([CountryData]?, CountryManagerError?) -> Void) {
         let endpoint: String
         
         switch countryName {
@@ -30,33 +30,34 @@ class CountryManagerApiRequest {
         default:
             endpoint = "name/\(countryName)?fields=name,capital,region,latlng,flag,population,timezones,languages,unMember"
         }
+        
         let urlString = "\(urlBaseString)\(endpoint)"
         print(urlString)
-        performRequest(urlString, completion: completion)
+        performRequest(urlString, completionHandler: completionHandler)
     }
 
     
-    private func performRequest(_ urlString: String, completion: @escaping ([CountryData]?, CountryManagerError?) -> Void) {
+    private func performRequest(_ urlString: String, completionHandler: @escaping ([CountryData]?, CountryManagerError?) -> Void) {
         
         // Create URL
         if let url = URL(string: urlString) {
             
             // Create URL Session
-            let session = URLSession(configuration: .default)
+            let urlSession = URLSession(configuration: .default)
             
             // Session Task
-            let task = session.dataTask(with: url) { data, response, error in
-                if let error = error {
-                    completion(nil, CountryManagerError.failedRequest)
+            let task = urlSession.dataTask(with: url) { data, response, error in
+                if let _ = error {
+                    completionHandler(nil, CountryManagerError.failedRequest)
                     return
                 }
                 if let receivedData = data {
                     let decodedData = self.parseJSON(countryData: receivedData)
-                    completion(decodedData, nil)
+                    completionHandler(decodedData, nil)
                     
                 } else {
                     print("No data received")
-                    completion(nil, CountryManagerError.invalidResponseModel)
+                    completionHandler(nil, CountryManagerError.invalidResponseModel)
                 }
             }
             // Start Task
