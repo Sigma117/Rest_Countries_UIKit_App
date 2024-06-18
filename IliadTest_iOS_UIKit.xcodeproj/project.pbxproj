@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C172EFD2C2160BA0031D66B /* CountryManagerApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C172EFC2C2160BA0031D66B /* CountryManagerApiRequestTests.swift */; };
 		8C172EFF2C2162430031D66B /* CountryManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C172EFE2C2162430031D66B /* CountryManagerError.swift */; };
+		8C172F012C216E4C0031D66B /* CountryManagerCostants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C172F002C216E4C0031D66B /* CountryManagerCostants.swift */; };
 		8C925B392C13173900F7BF12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C925B382C13173900F7BF12 /* DetailViewController.swift */; };
 		8C925B3B2C135FFD00F7BF12 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C925B3A2C135FFD00F7BF12 /* FilterViewController.swift */; };
 		8CADDDFC2C0EFE9A0058FF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDFB2C0EFE9A0058FF15 /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		8C172EFC2C2160BA0031D66B /* CountryManagerApiRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerApiRequestTests.swift; sourceTree = "<group>"; };
 		8C172EFE2C2162430031D66B /* CountryManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerError.swift; sourceTree = "<group>"; };
+		8C172F002C216E4C0031D66B /* CountryManagerCostants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerCostants.swift; sourceTree = "<group>"; };
 		8C925B382C13173900F7BF12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8C925B3A2C135FFD00F7BF12 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		8CADDDF82C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IliadTest_iOS_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				8CF7458C2C11A1CC00C4ABB0 /* CountryManagerApiRequest.swift */,
+				8C172F002C216E4C0031D66B /* CountryManagerCostants.swift */,
 				8CF745A22C11F13F00C4ABB0 /* CountryData.swift */,
 				8C172EFE2C2162430031D66B /* CountryManagerError.swift */,
 			);
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CADDE062C0EFE9A0058FF15 /* IliadTest_iOS_UIKit.xcdatamodeld in Sources */,
+				8C172F012C216E4C0031D66B /* CountryManagerCostants.swift in Sources */,
 				8CADDE002C0EFE9A0058FF15 /* CountryViewController.swift in Sources */,
 				8CADDDFC2C0EFE9A0058FF15 /* AppDelegate.swift in Sources */,
 				8CF7458D2C11A1CC00C4ABB0 /* CountryManagerApiRequest.swift in Sources */,

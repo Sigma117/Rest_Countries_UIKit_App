@@ -11,20 +11,30 @@ import Foundation
 
 class CountryManagerApiRequest {
     
-    func fetchCountry(_ countryName: String, completion: @escaping ([CountryData]?, CountryManagerError?) -> Void) {
-        let baseCountryURL = "https://restcountries.com/v3.1/"
+    private var urlBaseString: String
+    private var urlSession: URLSession
+     
+    required init(urlBaseString: String, urlSession: URLSession = .shared) {
+        self.urlBaseString  = urlBaseString
+        self.urlSession = urlSession
+    }
+    
+    func fetchCountry (countryName: String, completion: @escaping ([CountryData]?, CountryManagerError?) -> Void) {
         let endpoint: String
-        if countryName.lowercased() == "all" {
+        
+        switch countryName {
+        case "all":
             endpoint = "all?fields=name,flag"
-        } else if countryName == "filter" {
+        case "filter":
             endpoint = "all?fields=name,flag,region,languages"
-        } else {
+        default:
             endpoint = "name/\(countryName)?fields=name,capital,region,latlng,flag,population,timezones,languages,unMember"
         }
-        let urlString = "\(baseCountryURL)\(endpoint)"
+        let urlString = "\(urlBaseString)\(endpoint)"
         print(urlString)
         performRequest(urlString, completion: completion)
     }
+
     
     private func performRequest(_ urlString: String, completion: @escaping ([CountryData]?, CountryManagerError?) -> Void) {
         
