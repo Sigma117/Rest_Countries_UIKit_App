@@ -1,12 +1,12 @@
 //
 //  CountryManagerApiRequestTests.swift
-//  IliadTest_iOS_UIKitTests
+//  Rest_Countries_UIKit_AppTests
 //
 //  Created by Stefano Zhao on 18/06/24.
 //
 
 import XCTest
-@testable import IliadTest_iOS_UIKit
+@testable import Rest_Countries_UIKit_App
 
 final class CountryManagerApiRequestTests: XCTestCase {
 
@@ -38,7 +38,7 @@ final class CountryManagerApiRequestTests: XCTestCase {
         let expectation = self.expectation(description: "CountryManagerApiRequest Response Expectation")
         
         // Act
-        sut.fetchCountry(countryName: "Italy") { (countryData, error) in
+        sut.fetchCountry(countryName: "") { (countryData, error) in
             
             // Assert
             XCTAssertEqual(countryData?.first?.name.common, "Germany")

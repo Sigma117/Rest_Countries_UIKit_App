@@ -1,6 +1,6 @@
 //
-//  IliadTest_iOS_UIKitUITests.swift
-//  IliadTest_iOS_UIKitUITests
+//  Rest_Countries_UIKit_AppUITests.swift
+//  Rest_Countries_UIKit_AppUITests
 //
 //  Created by Stefano Zhao on 04/06/24.
 //

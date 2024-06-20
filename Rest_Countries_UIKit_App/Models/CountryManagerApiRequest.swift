@@ -1,6 +1,6 @@
 //
 //  CountryManager.swift
-//  IliadTest_iOS_UIKit
+//  Rest_Countries_UIKit_App
 //
 //  Created by Stefano Zhao on 06/06/24.
 //
@@ -43,7 +43,7 @@ class CountryManagerApiRequest: CountryManagerApiRequestProtocol {
         if let url = URL(string: urlString) {
             
             // Create URL Session
-            let urlSession = URLSession(configuration: .default)
+//            let urlSession = URLSession(configuration: .default)
             
             // Session Task
             let task = urlSession.dataTask(with: url) { data, response, error in

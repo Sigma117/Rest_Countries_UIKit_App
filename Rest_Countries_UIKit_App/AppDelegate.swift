@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  IliadTest_iOS_UIKit
+//  Rest_Countries_UIKit_App
 //
 //  Created by Stefano Zhao on 04/06/24.
 //
