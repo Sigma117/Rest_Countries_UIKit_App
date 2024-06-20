@@ -11,6 +11,7 @@ import XCTest
 final class CountryManagerApiRequestTests: XCTestCase {
 
     var sut: CountryManagerApiRequest!
+    var countryString = "German"
     
     override func setUpWithError() throws {
         
@@ -38,7 +39,7 @@ final class CountryManagerApiRequestTests: XCTestCase {
         let expectation = self.expectation(description: "CountryManagerApiRequest Response Expectation")
         
         // Act
-        sut.fetchCountry(countryName: "") { (countryData, error) in
+        sut.fetchCountry(countryName: countryString) { (countryData, error) in
             
             // Assert
             XCTAssertEqual(countryData?.first?.name.common, "Germany")
@@ -46,18 +47,57 @@ final class CountryManagerApiRequestTests: XCTestCase {
         }
         
         self.wait(for: [expectation], timeout: 5)
-        
-       
-        
     }
     
     func testCountryManagerApiRequestTest_WhenReceiveDifferentHesonResponde_ErrorTakePlace() {
         // Arragne
+        let jsonString = "{\"path\":/users\", \"error\":\"Internal Server Error\"}"
+        MockURLProtocol.stubResponseData = jsonString.data(using: .utf8)
+        
+        let expectation = self.expectation(description: "fetchCountry() method contain Unknowk JSON response, should be nil")
         
         // Act
+        sut.fetchCountry(countryName: countryString) { countryData, error in
+            
+            // Assert
+            XCTAssertNil(countryData)
+            XCTAssertEqual(error, CountryManagerError.invalidResponseModel)
+            expectation.fulfill()
+        }
         
-        // Assert
+        self.wait(for: [expectation], timeout: 2)
+    }
+    
+    func testCountryManagerApiRequestTest_WhenInvalidURLStringIsProvided_ReturnError() {
+        // Arrange
+        sut = CountryManagerApiRequest(urlBaseString: "")
+        let expectation = self.expectation(description: "the fetchCountry() method did not return an expected error")
         
+        // Act
+        sut.fetchCountry(countryName: "") { countryData, error in
+            
+            // Assert
+            XCTAssertEqual(error, CountryManagerError.invalidRequestURLString)
+            expectation.fulfill()
+        }
+        
+        self.wait(for: [expectation], timeout: 2)
+    }
+    
+    func testCountryApiRequestTest_WhenURLRequestFailed_ReturnError() {
+        // Arrange
+        MockURLProtocol.error = CountryManagerError.failedRequest
+        let expectation = self.expectation(description: "The detchCountry() did not return an expected error")
+        
+        // Act
+        sut.fetchCountry(countryName: countryString) { countryData, error in
+            
+            // Assert
+            XCTAssertEqual(error, CountryManagerError.failedRequest)
+            expectation.fulfill()
+        }
+        
+        self.wait(for: [expectation], timeout: 2)
     }
 
 }

@@ -167,13 +167,21 @@
 			path = Rest_Countries_UIKit_AppUITests;
 			sourceTree = "<group>";
 		};
-		8CF745892C11992F00C4ABB0 /* Models */ = {
+		8CCE6D6C2C243D9D001DF335 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				8CF7458C2C11A1CC00C4ABB0 /* CountryManagerApiRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8CF745892C11992F00C4ABB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				8C172F002C216E4C0031D66B /* CountryManagerCostants.swift */,
 				8CF745A22C11F13F00C4ABB0 /* CountryData.swift */,
 				8C172EFE2C2162430031D66B /* CountryManagerError.swift */,
+				8CCE6D6C2C243D9D001DF335 /* Network */,
 			);
 			path = Models;
 			sourceTree = "<group>";

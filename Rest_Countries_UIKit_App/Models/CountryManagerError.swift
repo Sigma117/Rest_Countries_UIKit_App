@@ -9,7 +9,7 @@ import Foundation
 
 enum CountryManagerError: Error, Equatable {
     
-    case invalidRequestURL
+    case invalidRequestURLString
     case failedRequest
     case invalidResponseModel
     case timeout

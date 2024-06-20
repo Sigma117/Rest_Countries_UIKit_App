@@ -8,6 +8,7 @@
 // MARK: File managing the url request to the restCountries server
 
 import Foundation
+import os
 
 class CountryManagerApiRequest: CountryManagerApiRequestProtocol {
     
@@ -27,6 +28,8 @@ class CountryManagerApiRequest: CountryManagerApiRequestProtocol {
             endpoint = "all?fields=name,flag"
         case "filter":
             endpoint = "all?fields=name,flag,region,languages"
+        case "":
+            endpoint = ""
         default:
             endpoint = "name/\(countryName)?fields=name,capital,region,latlng,flag,population,timezones,languages,unMember"
         }
@@ -41,38 +44,35 @@ class CountryManagerApiRequest: CountryManagerApiRequestProtocol {
         
         // Create URL
         if let url = URL(string: urlString) {
-            
-            // Create URL Session
-//            let urlSession = URLSession(configuration: .default)
-            
+
             // Session Task
             let task = urlSession.dataTask(with: url) { data, response, error in
                 if let _ = error {
                     completionHandler(nil, CountryManagerError.failedRequest)
                     return
                 }
-                if let receivedData = data {
-                    let decodedData = self.parseJSON(countryData: receivedData)
+                if let receivedData = data, let decodedData = try? self.parseJSON(countryData: receivedData) {
                     completionHandler(decodedData, nil)
                     
                 } else {
-                    print("No data received")
+                    print("No data no decodeble")
                     completionHandler(nil, CountryManagerError.invalidResponseModel)
                 }
             }
             // Start Task
             task.resume()
+        } else {
+            completionHandler(nil, CountryManagerError.invalidRequestURLString)
         }
     }
     
-    private func parseJSON(countryData: Data) -> [CountryData]? {
+    private func parseJSON(countryData: Data) throws -> [CountryData]? {
         let decoder = JSONDecoder()
         
         do{
             let decodedCountryData = try decoder.decode([CountryData].self, from: countryData)
             return decodedCountryData
         } catch {
-            print(error)
             return nil
         }
         
