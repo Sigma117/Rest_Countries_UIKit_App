@@ -12,7 +12,7 @@
         <!--Country View Controller-->
         <scene sceneID="JIk-tN-puC">
             <objects>
-                <viewController storyboardIdentifier="CountriesViewController" id="WYS-LZ-qlM" customClass="CountryViewController" customModule="IliadTest_iOS_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CountryViewController" id="WYS-LZ-qlM" customClass="CountryViewController" customModule="Rest_Countries_UIKit_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zpo-O5-UR3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,7 +110,7 @@
         <!--Filter View-->
         <scene sceneID="7FD-Zo-fJ4">
             <objects>
-                <viewController id="pev-LG-ETl" userLabel="Filter View" customClass="FilterViewController" customModule="IliadTest_iOS_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pev-LG-ETl" userLabel="Filter View" customClass="FilterViewController" customModule="Rest_Countries_UIKit_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="exr-Ep-d62">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +201,7 @@
         <!--Detail View Controller-->
         <scene sceneID="FJw-TC-ZL5">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="1OG-7n-n8o" customClass="DetailViewController" customModule="IliadTest_iOS_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="1OG-7n-n8o" customClass="DetailViewController" customModule="Rest_Countries_UIKit_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sra-4Y-wfK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

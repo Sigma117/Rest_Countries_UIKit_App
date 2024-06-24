@@ -11,7 +11,7 @@ import XCTest
 final class CountryManagerApiRequestTests: XCTestCase {
 
     var sut: CountryManagerApiRequest!
-    var countryString = "German"
+    var countryString: String!
     
     override func setUpWithError() throws {
         
@@ -20,12 +20,14 @@ final class CountryManagerApiRequestTests: XCTestCase {
         let urlSession = URLSession(configuration: config)
         
         sut = CountryManagerApiRequest(urlBaseString: CountryManagerCostants.urlBaseRestCountrisApi, urlSession: urlSession)
+        countryString = "German"
     }
 
     override func tearDownWithError() throws {
         sut = nil
         MockURLProtocol.stubResponseData = nil
         MockURLProtocol.error = nil
+        countryString = nil
     }
 
     

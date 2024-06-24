@@ -23,8 +23,8 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Setup SearchBar
         searchBar.delegate = self
-        searchBar.placeholder = "Search for a country"
         
         // Setup TableView
         countryTableView.dataSource = self
