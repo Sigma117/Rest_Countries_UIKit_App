@@ -86,11 +86,11 @@ class CountryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.endEditing(true)
+        self.searchBar.endEditing(true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        searchBar.endEditing(true)
+        self.searchBar.endEditing(true)
     }
     
     // MARK: - Unwind and filters
