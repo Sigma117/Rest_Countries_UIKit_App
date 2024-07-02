@@ -20,7 +20,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark_background" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lK-G1-hQE">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <searchBar contentMode="redraw" placeholder="Search for country" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQI-RS-yRK">
+                            <searchBar contentMode="redraw" placeholder="Search for country" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQI-RS-yRK" userLabel="CountrySearchBar">
                                 <rect key="frame" x="0.0" y="103" width="393" height="56"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
@@ -41,6 +41,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="countryTableView"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -74,6 +75,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="F2a-eI-QQM">
                                 <rect key="frame" x="16" y="5" width="118" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="resetFilterButton"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reset Filters"/>
                                 <connections>
@@ -85,6 +87,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="p8V-X2-gN8">
                                 <rect key="frame" x="257" y="4.6666666666666679" width="120" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="filterButton"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Filters"/>
                                 <connections>
@@ -130,8 +133,9 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-Pl-KUs">
+                                            <pickerView contentMode="center" restorationIdentifier="LanguagesPickerView" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-Pl-KUs">
                                                 <rect key="frame" x="0.0" y="54" width="393" height="301.66666666666669"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="languagePickerView"/>
                                             </pickerView>
                                         </subviews>
                                         <constraints>
@@ -148,11 +152,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDf-vG-1BI" userLabel="Continent Picker View">
+                                            <pickerView contentMode="scaleToFill" restorationIdentifier="ContinentsPickerView" translatesAutoresizingMaskIntoConstraints="NO" id="yDf-vG-1BI" userLabel="Continent Picker View">
                                                 <rect key="frame" x="0.0" y="43.333333333333314" width="393" height="280.66666666666669"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="continentPickerView"/>
                                             </pickerView>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83O-N0-DZy" userLabel="filterButton">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83O-N0-DZy" userLabel="filterButtonFilterView">
                                                 <rect key="frame" x="0.0" y="323.99999999999994" width="393" height="31.333333333333314"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="filterButtonFilterView"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31.333333333333329" id="VgQ-kQ-t3L"/>
                                                 </constraints>
